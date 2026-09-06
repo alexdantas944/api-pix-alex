@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: api-pix-alex
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    maxShutdownDelaySeconds: 30
+    envVars:
+      - key: PIX_KEY
+        sync: false
+      - key: PIX_NAME
+        value: ALEX DA SILVA DANTAS
+      - key: PIX_CITY
+        value: FORTALEZA
+      - key: CORS_ORIGIN
+        value: "*"
